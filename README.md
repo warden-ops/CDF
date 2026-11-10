@@ -35,3 +35,4 @@ support@shuffle.dev
 ## 4. Credits & Special thanks
 
 We use placeholders from https://unsplash.com/
+<!-- Relance du déploiement GitHub Pages, 2026-11-10 -->
