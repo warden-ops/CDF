@@ -256,11 +256,13 @@ h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.01em;font-weight:500}
 .feature dl{display:grid;gap:.45rem;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.9rem}
 .feature dt{display:inline;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-right:.5rem}
 .feature dd{display:inline;color:var(--dark);font-weight:500}
-.thumbs{display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap}
-.thumbs a,.thumbs button{display:flex;align-items:center;gap:.6rem;padding:.4rem .8rem .4rem .4rem;border:1px solid var(--line);background:var(--white);font-size:.82rem;font-weight:500;color:var(--dark)}
+.thumbs{display:flex;gap:.8rem;margin:0 0 1.2rem;flex-wrap:wrap;align-items:center}
+.thumbs a,.thumbs button{display:flex;align-items:center;gap:.6rem;padding:.5rem 1rem .5rem .5rem;border:1px solid var(--line);background:var(--white);font-size:.95rem;font-weight:500;color:var(--dark)}
 .thumbs a[aria-current],.thumbs button[aria-pressed="true"]{border-color:var(--dark);box-shadow:inset 0 -2px 0 var(--red)}
-.thumbs img{width:40px;height:40px;object-fit:cover;border-radius:50%}
-.thumbs .soon-dot{width:40px;height:40px;border-radius:50%;border:1px dashed #a3abb9;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted)}
+.thumbs img{width:52px;height:52px;object-fit:cover;border-radius:50%}
+.thumbs .soon-dot{width:52px;height:52px;border-radius:50%;border:1px dashed #a3abb9;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted)}
+#courtiers .head-row{margin-bottom:1.6rem}
+@media (max-width:760px){.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;align-items:stretch}}
 
 
 .thumbs button{font-family:inherit;line-height:inherit;text-align:left;cursor:pointer;border-radius:0;-webkit-appearance:none;appearance:none}
@@ -588,6 +590,13 @@ h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.01em;font-weight:500}
 <div><p class="kicker label">Courtiers</p><h2>Bien s'entourer <em>fait toute la différence.</em></h2></div>
 <a class="btn btn-ghost btn-sm" href="#contact">Nous contacter</a>
 </div>
+<p aria-live="polite" class="sr-only" id="courtier-annonce"></p>
+<div aria-label="Choisir un courtier" class="thumbs" role="group">
+<button aria-controls="courtier-vedette" aria-pressed="true" data-b="pierre-olivier-chiasson" type="button"><img alt="" aria-hidden="true" height="52" loading="lazy" src="/assets-v2/pierre-olivier-120.webp" width="52"/>Pierre-Olivier Chiasson</button>
+<button aria-controls="courtier-vedette" aria-pressed="false" data-b="marco-de-francesco" type="button"><img alt="" aria-hidden="true" height="52" loading="lazy" src="/assets-v2/marco-120.webp" width="52"/>Marco De Francesco</button>
+<button aria-controls="courtier-vedette" aria-pressed="false" data-b="jade-sirois" type="button"><img alt="" aria-hidden="true" height="52" loading="lazy" src="/assets-v2/jade-120.webp" width="52"/>Jade Sirois</button>
+<button aria-controls="courtier-vedette" aria-pressed="false" data-b="pierre-luc-giroux" type="button"><img alt="" aria-hidden="true" height="52" loading="lazy" src="/assets-v2/pierre-luc-giroux-120.webp" width="52"/>Pierre-Luc Giroux</button>
+</div>
 <article class="feature" id="courtier-vedette">
 <figure class="fx-photos">
 <img alt="Pierre-Olivier Chiasson, courtier immobilier résidentiel et commercial à Sherbrooke" data-b="pierre-olivier-chiasson" height="600" loading="lazy" src="/assets-v2/pierre-olivier.webp" width="600"/>
@@ -642,13 +651,6 @@ h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.01em;font-weight:500}
 </div>
 </div>
 </article>
-<p aria-live="polite" class="sr-only" id="courtier-annonce"></p>
-<div aria-label="Choisir un courtier" class="thumbs" role="group">
-<button aria-controls="courtier-vedette" aria-pressed="true" data-b="pierre-olivier-chiasson" type="button"><img alt="" aria-hidden="true" height="40" loading="lazy" src="/assets-v2/pierre-olivier-120.webp" width="40"/>Pierre-Olivier Chiasson</button>
-<button aria-controls="courtier-vedette" aria-pressed="false" data-b="marco-de-francesco" type="button"><img alt="" aria-hidden="true" height="40" loading="lazy" src="/assets-v2/marco-120.webp" width="40"/>Marco De Francesco</button>
-<button aria-controls="courtier-vedette" aria-pressed="false" data-b="jade-sirois" type="button"><img alt="" aria-hidden="true" height="40" loading="lazy" src="/assets-v2/jade-120.webp" width="40"/>Jade Sirois</button>
-<button aria-controls="courtier-vedette" aria-pressed="false" data-b="pierre-luc-giroux" type="button"><img alt="" aria-hidden="true" height="40" loading="lazy" src="/assets-v2/pierre-luc-giroux-120.webp" width="40"/>Pierre-Luc Giroux</button>
-</div>
 </div>
 </section>
 
