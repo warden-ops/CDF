@@ -460,7 +460,7 @@ SERVICES = [
             ("Courtier acheteur, à quoi ça sert", "Le vendeur a souvent déjà un courtier. Le vôtre lit les défauts, le zonage, et ce que le marché a vraiment payé dans la rue : pas l'annonce. Au Québec, les règles d'agence s'expliquent avant de visiter sérieusement."),
             ("Recherche et filtres", "Centris, hors-marché parfois, et le territoire réel : Fleurimont n'est pas Lennoxville, un chalet Orford n'est pas un condo Magog. Nous évitons les visites hors critères."),
             ("Offre, inspection, notaire", "Une offre trop émotive se paie. Inspection, tests (fosse, pyrite selon le cas), et notaire. Les frais de clôture (mutation, notaire, ajustements) se prévoient : voir notre guide des frais cachés."),
-            ("Premier achat", "Préautorisation, mise de fonds, SCHL si moins de 20 %, et calendrier réaliste. Jade, Pierre-Olivier et Marco accompagnent aussi les premiers acheteurs. Nouveau en 2026 : <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"article-credit-impot-taxe-de-bienvenue.html\">le remboursement de la taxe de bienvenue, jusqu'à 5 875 $</a>."),
+            ("Premier achat", "Préautorisation, mise de fonds, SCHL si moins de 20 %, et calendrier réaliste. Jade, Pierre-Olivier, Marco et <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"pierre-luc.html\">Pierre-Luc Giroux</a>, Courtier immobilier résidentiel, accompagnent aussi les premiers acheteurs. Nouveau en 2026 : <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"article-credit-impot-taxe-de-bienvenue.html\">le remboursement de la taxe de bienvenue, jusqu'à 5 875 $</a>."),
         ],
         "faqs": [
             ("Le courtier acheteur est-il gratuit ?", "Au Québec, la rémunération est prévue aux contrats. Souvent, une part de la commission du listage rémunère le courtier collaborateur. On vous l'explique clairement avant de commencer."),
@@ -483,7 +483,7 @@ SERVICES = [
             ("Investisseur vs occupant", "Un occupant juge l'usage. Un investisseur juge le bail, le covenant et le taux. La même adresse n'a pas le même prix selon le scénario. On le sépare dès l'évaluation."),
         ],
         "faqs": [
-            ("Faites-vous seulement le résidentiel ?", "Non. Pierre-Olivier et Marco sont aussi courtiers commerciaux. Jade se concentre sur le résidentiel."),
+            ("Faites-vous seulement le résidentiel ?", "Non. Pierre-Olivier et Marco sont aussi courtiers commerciaux. Jade et Pierre-Luc Giroux, Courtier immobilier résidentiel, se concentrent sur le résidentiel."),
             ("Intervenez-vous à Montréal ou Québec ?", "Lorsque le mandat le justifie, oui : des fiches hors Estrie l'illustrent. Le bureau reste à Sherbrooke."),
             ("Un dépanneur ou un resto, c'est du commercial ?", "Souvent un fonds de commerce + un bail ou un immeuble. Les équipements et l'achalandage se négocient à part des murs. Voyez avec l'équipe le bon véhicule."),
             ("Par où commencer ?", "Appel ou formulaire : type de bien, occupation vs investissement, échéance. Une visite à l'aveugle sans zonage fait perdre du temps."),

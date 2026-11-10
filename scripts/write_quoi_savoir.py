@@ -60,7 +60,7 @@ CITIES = [
             ("Faut-il un courtier pour vendre à Sherbrooke ?", "Ce n'est pas obligatoire. Un courtier local connaît les prix par quartier, prépare le dossier et négocie les conditions. L'équipe Chiasson de Francesco travaille à Sherbrooke avec RE/MAX D'ABORD."),
             ("Quel quartier de Sherbrooke choisir pour une première maison ?", "Souvent Fleurimont ou Mont-Bellevue pour une unifamiliale, selon le budget. Lennoxville convient si le cadre village compte. Visitez plutôt que de choisir sur une moyenne de ville."),
             ("Combien de temps pour vendre à Sherbrooke ?", "Cela dépend du prix, de l'état et du secteur. Un bien juste peut recevoir des offres en quelques semaines. Un bien trop cher prend plus longtemps."),
-            ("Qui sont les courtiers Chiasson de Francesco ?", "Pierre-Olivier Chiasson et Marco De Francesco (résidentiel et commercial) et Jade Sirois (résidentiel). Bureau : 157 boul. Jacques-Cartier Sud, Sherbrooke (QC) J1J 2Z4."),
+            ("Qui sont les courtiers Chiasson de Francesco ?", "Pierre-Olivier Chiasson et Marco De Francesco (résidentiel et commercial), Jade Sirois (résidentiel) et Pierre-Luc Giroux, Courtier immobilier résidentiel. Bureau : 157 boul. Jacques-Cartier Sud, Sherbrooke (QC) J1J 2Z4."),
         ],
     },
     {
@@ -1060,7 +1060,7 @@ def render(city: dict) -> str:
       {mistakes}
 
       <h2 class="font-heading text-2xl font-bold text-brand-navy mt-10 mb-4">Qui appeler pour vendre ou acheter {prep} {name} ?</h2>
-      <p class="text-gray-600 leading-relaxed mb-6">L'équipe Chiasson de Francesco, courtiers immobiliers RE/MAX D'ABORD à Sherbrooke, accompagne l'achat et la vente {prep} {name}. Pierre-Olivier Chiasson (819-919-4631, p-o.chiasson@remax-quebec.com) et Marco De Francesco (819-562-0656, marco.defrancesco@remax-quebec.com) sont courtiers résidentiels et commerciaux. Jade Sirois (819-434-2652, jade.sirois@remax-quebec.com) est courtière résidentielle. Bureau : 157 boul. Jacques-Cartier Sud, Sherbrooke (QC) J1J 2Z4. Page région : <a class="text-brand-navy font-medium hover:text-brand-red" href="{region_href}">{name}</a>.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">L'équipe Chiasson de Francesco, courtiers immobiliers RE/MAX D'ABORD à Sherbrooke, accompagne l'achat et la vente {prep} {name}. Pierre-Olivier Chiasson (819-919-4631, p-o.chiasson@remax-quebec.com) et Marco De Francesco (819-562-0656, marco.defrancesco@remax-quebec.com) sont courtiers résidentiels et commerciaux. Jade Sirois (819-434-2652, jade.sirois@remax-quebec.com) est courtière résidentielle. <a class="text-brand-navy font-medium hover:text-brand-red" href="pierre-luc.html">Pierre-Luc Giroux</a>, Courtier immobilier résidentiel (514-889-2927, pierreluc.giroux@remax-quebec.com). Bureau : 157 boul. Jacques-Cartier Sud, Sherbrooke (QC) J1J 2Z4. Page région : <a class="text-brand-navy font-medium hover:text-brand-red" href="{region_href}">{name}</a>.</p>
 
       <h2 class="font-heading text-2xl font-bold text-brand-navy mt-10 mb-4">Questions fréquentes</h2>
       {faqs_html}

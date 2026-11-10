@@ -62,6 +62,10 @@ PAGE_META = {
         "Jade Sirois, courtière immobilière Sherbrooke",
         "Jade Sirois, courtière immobilière résidentielle à Sherbrooke. Équipe Chiasson de Francesco, RE/MAX D'ABORD, pour l'achat et la vente en Estrie.",
     ),
+    "pierre-luc.html": (
+        "Pierre-Luc Giroux, courtier résidentiel Sherbrooke",
+        "Pierre-Luc Giroux est courtier immobilier résidentiel à Sherbrooke depuis 2024 et accompagne l'achat et la vente en Estrie, avec RE/MAX D'ABORD.",
+    ),
     "article-previsions-2026.html": (
         "Prévisions immobilier Estrie 2026 | CDF",
         "Taux, prix et conseils pour acheter ou vendre en Estrie en 2026, par l'équipe Chiasson de Francesco à Sherbrooke.",
@@ -414,6 +418,17 @@ BROKERS = {
             "https://www.centris.ca/fr/courtier-immobilier~jade-sirois~re-max-d-abord-inc./j8023",
         ],
     },
+    "pierre-luc.html": {
+        "name": "Pierre-Luc Giroux",
+        "job": "Courtier immobilier résidentiel",
+        "tel": "+1-514-889-2927",
+        "email": "pierreluc.giroux@remax-quebec.com",
+        "image": f"{BASE}/src/assets/images/pierre-luc-giroux.webp",
+        "languages": None,
+        "sameAs": [
+            "https://www.remax-quebec.com/fr/courtiers-immobiliers/pierreluc.giroux",
+        ],
+    },
 }
 
 SOLD_PATHS = {
@@ -673,7 +688,12 @@ def person_json_ld(rel: str, broker: dict) -> dict:
             "name": "Équipe Chiasson De Francesco",
             "url": f"{BASE}/",
             "image": f"{BASE}/src/assets/images/chiassondefrancescoteam.jpg",
-            "logo": {"@type": "ImageObject", "url": f"{BASE}/src/assets/logo.png"},
+            "logo": {
+                "@type": "ImageObject",
+                "url": f"{BASE}/src/assets/logo.png",
+                "width": 908,
+                "height": 244,
+            },
             "telephone": "+1-819-919-4631",
             "address": {
                 "@type": "PostalAddress",
@@ -683,6 +703,14 @@ def person_json_ld(rel: str, broker: dict) -> dict:
                 "postalCode": "J1J 2Z4",
                 "addressCountry": "CA",
             },
+            "description": "Équipe de courtiers immobiliers résidentiels et commerciaux à Sherbrooke et en Estrie, affiliée à RE/MAX D'ABORD",
+            "knowsAbout": [
+                "courtage immobilier résidentiel",
+                "vente de maison",
+                "achat de propriété",
+                "plex et immeubles à revenus",
+                "évaluation de propriété",
+            ],
         },
         "memberOf": {
             "@type": "Organization",
@@ -786,6 +814,8 @@ def process_file(path: Path, listings_by_uls: dict[str, dict]) -> None:
         og_image = BROKERS["jade.html"]["image"]
     elif rel == "pierre-olivier.html":
         og_image = BROKERS["pierre-olivier.html"]["image"]
+    elif rel == "pierre-luc.html":
+        og_image = BROKERS["pierre-luc.html"]["image"]
 
     if rel != "index.html":
         text = set_or_insert_meta(text, title, desc, page_url(path), og_image)
@@ -863,6 +893,7 @@ def write_sitemap(listings: list[dict]) -> None:
         (f"{BASE}/pierre-olivier.html", "0.7"),
         (f"{BASE}/marco.html", "0.7"),
         (f"{BASE}/jade.html", "0.7"),
+        (f"{BASE}/pierre-luc.html", "0.7"),
         (f"{BASE}/confidentialite.html", "0.3"),
     ]
     for slug in REGION_META:
