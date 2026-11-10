@@ -321,7 +321,7 @@ SERVICES = [
             ("Vendre un plex", "Dossier locatif propre, photos des logements, prix collé aux ventes de plex du même secteur : pas à une unifamiliale voisine."),
         ],
         "faqs": [
-            ("Premier plex : par où commencer ?", "Préautorisation investisseur, secteur, nombre d'unités, et une lecture des baux avant l'émotion. Jade, Pierre-Olivier et Marco accompagnent aussi ce premier pas."),
+            ("Premier plex : par où commencer ?", "Préautorisation investisseur, secteur, nombre d'unités, et une lecture des baux avant l'émotion. Jade, Pierre-Olivier, Marco et Pierre-Luc Giroux, Courtier immobilier résidentiel, accompagnent aussi ce premier pas."),
             ("Occupation d'un logement par l'acheteur ?", "Possible selon les baux et la loi. Ce n'est pas automatique. On le cadre dans l'offre."),
             ("Plex ou condo locatif ?", "Le plex, vous gérez l'immeuble. Le condo, vous payez des charges et un syndicat. Deux risques, deux rendements."),
             ("Vous inscrivez des plex ?", "Oui, selon les mandats. Voyez aussi vendremonplex.com dans le réseau de l'équipe."),
@@ -475,7 +475,7 @@ ARTICLES = [
             ("Le principe", "Sous 20 %, le prêteur exige généralement une assurance prêt hypothécaire. La prime se capitalise souvent dans le prêt. Les règles et les taux changent : votre courtier hypothécaire donne le chiffre du jour, pas cette page."),
             ("Ce que ça change dans l'offre", "La préautorisation doit coller au type de bien (unifamiliale, plex, chalet). Un chalet saisonnier ou un plex de 5 logements n'entre pas dans la même case qu'un bungalow Fleurimont."),
             ("Frais autour", "Droits de mutation, notaire, inspection. Une mise de fonds « au maximum du prix » sans réserve pour la taxe de bienvenue casse le closing. Voir <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"article-frais-caches.html\">frais cachés</a>. Le Québec peut ensuite vous rembourser une partie de la taxe de bienvenue : <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"article-credit-impot-taxe-de-bienvenue.html\">crédit d'impôt pour accès à la propriété</a>."),
-            ("Rôle du courtier immobilier", "On aligne le bien sur ce que le prêteur finance. On ne promet pas une prime. Pierre-Olivier, Marco et Jade travaillent avec votre dossier hypothécaire, pas à sa place."),
+            ("Rôle du courtier immobilier", "On aligne le bien sur ce que le prêteur finance. On ne promet pas une prime. Pierre-Olivier, Marco, Jade et <a class=\"text-brand-navy font-medium hover:text-brand-red\" href=\"pierre-luc.html\">Pierre-Luc Giroux</a>, Courtier immobilier résidentiel, travaillent avec votre dossier hypothécaire, pas à sa place."),
         ],
     },
     {
