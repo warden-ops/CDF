@@ -122,18 +122,6 @@
       "fallbackImage": "27273866.jpg"
     },
     {
-      "uls": "12505188",
-      "country": "ca",
-      "province": "qc",
-      "city": "windsor",
-      "sector": "centre",
-      "street": "16-rue-dufresne",
-      "title": "16 Rue Dufresne, Windsor",
-      "shareTitle": "Maison de plain-pied à vendre à Windsor : 16 Rue Dufresne",
-      "legacyFile": "prop-16-rue-dufresne-windsor-12505188.html",
-      "fallbackImage": "12505188.jpg"
-    },
-    {
       "uls": "16190804",
       "country": "ca",
       "province": "qc",
@@ -156,30 +144,6 @@
       "shareTitle": "2-Plex à vendre à Sherbrooke : 1505 - 1507 Rue St-André",
       "legacyFile": "prop-1505-1507-rue-st-andre-sherbrooke-19680229.html",
       "fallbackImage": "19680229.jpg"
-    },
-    {
-      "uls": "19753390",
-      "country": "ca",
-      "province": "qc",
-      "city": "saint-isidore-de-clifton",
-      "sector": "centre",
-      "street": "251z-9e-rang",
-      "title": "251Z 9e Rang, Saint-Isidore-de-Clifton",
-      "shareTitle": "Fermette à vendre à Saint-Isidore-de-Clifton : 251Z 9e Rang",
-      "legacyFile": "prop-251z-9e-rang-saint-isidore-de-clifton-19753390.html",
-      "fallbackImage": "19753390.jpg"
-    },
-    {
-      "uls": "23954624",
-      "country": "ca",
-      "province": "qc",
-      "city": "saint-isidore-de-clifton",
-      "sector": "centre",
-      "street": "251-9e-rang",
-      "title": "251, 9e Rang, Saint-Isidore-de-Clifton",
-      "shareTitle": "Fermette à vendre à Saint-Isidore-de-Clifton : 251, 9e Rang",
-      "legacyFile": "prop-251-9e-rang-saint-isidore-de-clifton-23954624.html",
-      "fallbackImage": "2519erang.jpg"
     },
     {
       "uls": "27084256",

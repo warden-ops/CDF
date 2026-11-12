@@ -62,11 +62,6 @@
       "permanent": true
     },
     {
-      "source": "/prop-16-rue-dufresne-windsor-12505188.html",
-      "destination": "/ca/qc/windsor/centre/16-rue-dufresne/",
-      "permanent": true
-    },
-    {
       "source": "/prop-800z-rue-tessier-sherbrooke-16190804.html",
       "destination": "/ca/qc/sherbrooke/mont-bellevue/800z-rue-tessier/",
       "permanent": true
@@ -74,16 +69,6 @@
     {
       "source": "/prop-1505-1507-rue-st-andre-sherbrooke-19680229.html",
       "destination": "/ca/qc/sherbrooke/mont-bellevue/1505-1507-rue-st-andre/",
-      "permanent": true
-    },
-    {
-      "source": "/prop-251z-9e-rang-saint-isidore-de-clifton-19753390.html",
-      "destination": "/ca/qc/saint-isidore-de-clifton/centre/251z-9e-rang/",
-      "permanent": true
-    },
-    {
-      "source": "/prop-251-9e-rang-saint-isidore-de-clifton-23954624.html",
-      "destination": "/ca/qc/saint-isidore-de-clifton/centre/251-9e-rang/",
       "permanent": true
     },
     {
