@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T19:29:02.665336+00:00",
+  "generatedAt": "2026-11-13T19:07:42.422547+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -43,32 +43,10 @@
     "28699947",
     "9745288"
   ],
-  "removedListings": [
-    "12505188",
-    "19753390",
-    "23954624"
-  ],
-  "prunedPages": [
-    "/home/runner/work/CDF/CDF/ca/qc/windsor/centre/16-rue-dufresne/index.html",
-    "/home/runner/work/CDF/CDF/prop-16-rue-dufresne-windsor-12505188.html",
-    "proprietes.html:/ca/qc/windsor/centre/16-rue-dufresne/",
-    "/home/runner/work/CDF/CDF/ca/qc/saint-isidore-de-clifton/centre/251z-9e-rang/index.html",
-    "/home/runner/work/CDF/CDF/prop-251z-9e-rang-saint-isidore-de-clifton-19753390.html",
-    "proprietes.html:/ca/qc/saint-isidore-de-clifton/centre/251z-9e-rang/",
-    "/home/runner/work/CDF/CDF/ca/qc/saint-isidore-de-clifton/centre/251-9e-rang/index.html",
-    "/home/runner/work/CDF/CDF/prop-251-9e-rang-saint-isidore-de-clifton-23954624.html",
-    "proprietes.html:/ca/qc/saint-isidore-de-clifton/centre/251-9e-rang/"
-  ],
+  "removedListings": [],
+  "prunedPages": [],
   "maxListings": 30,
-  "removedStale": [
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/12505188",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/19753390",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/23954624",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/12505188.jpg",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/19753390.jpg",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/23954624.jpg",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/2519erang.jpg"
-  ],
+  "removedStale": [],
   "listings": [
     {
       "id": "25394249",
