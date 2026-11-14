@@ -352,7 +352,7 @@ def render(page: dict) -> str:
 <body class="antialiased bg-gray-50 text-gray-900 font-body flex flex-col min-h-screen">
   <nav class="py-4 px-6 fixed w-full top-0 z-50 bg-brand-navy shadow-md">
     <div class="relative max-w-7xl mx-auto flex items-center justify-between">
-      <a href="/index.html"><img src="/src/assets/logo.png" alt="Chiasson & De Francesco" class="h-10 md:h-12 w-auto"></a>
+      <a href="/index.html"><img src="/src/assets/logo.png" alt="Équipe Chiasson De Francesco, courtiers immobiliers" class="h-10 md:h-12 w-auto"></a>
       <div class="hidden md:flex items-center gap-10">
         <a href="/index.html" class="text-white hover:text-brand-red transition-colors font-medium">Accueil</a>
         <a href="/index.html#about" class="text-white hover:text-brand-red font-medium">Équipe</a>
@@ -419,7 +419,7 @@ def render(page: dict) -> str:
         <a href="https://vendremonplex.com/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors">vendremonplex.com</a>
         <a href="https://realestatesherbrooke.com/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors">realestatesherbrooke.com</a>
       </div>
-      <p class="text-center text-xs text-gray-500 mt-6">&copy; 2026 Équipe Chiasson & De Francesco.</p>
+      <p class="text-center text-xs text-gray-500 mt-6">&copy; 2026 Équipe Chiasson De Francesco.</p>
     </div>
   </footer>
   <script>var b=document.getElementById('mobile-menu-btn'),m=document.getElementById('mobile-menu');if(b&&m)b.addEventListener('click',function(){{m.classList.toggle('hidden');}});</script>

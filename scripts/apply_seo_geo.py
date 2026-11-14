@@ -391,7 +391,6 @@ BROKERS = {
         "sameAs": [
             "https://www.remax-quebec.com/fr/courtiers-immobiliers/p-o.chiasson",
             "https://www.realtor.ca/courtier-immobilier/2110096/pierre-olivier-chiasson-157-boul-jacques-cartier-s-sherbrooke-quebec-j1j2z4",
-            "https://pierreoliviercourtier.com/",
         ],
     },
     "marco.html": {
@@ -683,7 +682,7 @@ def person_json_ld(rel: str, broker: dict) -> dict:
         "image": broker["image"],
         "telephone": broker["tel"],
         "worksFor": {
-            "@type": "RealEstateAgent",
+            "@type": ["RealEstateAgent", "LocalBusiness"],
             "@id": f"{BASE}/#organization",
             "name": "Équipe Chiasson De Francesco",
             "url": f"{BASE}/",
@@ -703,6 +702,10 @@ def person_json_ld(rel: str, broker: dict) -> dict:
                 "postalCode": "J1J 2Z4",
                 "addressCountry": "CA",
             },
+            "sameAs": [
+                "https://www.facebook.com/equipechiassondefrancesco",
+                "https://www.instagram.com/equipechiassondefrancesco",
+            ],
             "description": "Équipe de courtiers immobiliers résidentiels et commerciaux à Sherbrooke et en Estrie, affiliée à RE/MAX D'ABORD",
             "knowsAbout": [
                 "courtage immobilier résidentiel",
@@ -714,7 +717,7 @@ def person_json_ld(rel: str, broker: dict) -> dict:
         },
         "memberOf": {
             "@type": "Organization",
-            "name": "RE/MAX D'ABORD",
+            "name": "RE/MAX D'ABORD, agence immobilière",
             "url": "https://remax-dabord.com/",
         },
         "address": {
