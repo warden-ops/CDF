@@ -26,7 +26,7 @@ function splitName(fullName) {
   };
 }
 
-export function buildLeadPayload({ name, email, phone, consent, answers, analysis, leadType }) {
+export function buildLeadPayload({ name, email, phone, consent, answers, analysis, leadType, howFound }) {
   const { firstName, lastName } = splitName(name);
   const region = findRegion(answers.region);
   const utm = readUtms();
@@ -44,6 +44,8 @@ export function buildLeadPayload({ name, email, phone, consent, answers, analysi
     consent,
     leadType,
     landingPage: window.location.href.split('?')[0],
+    referrer: document.referrer || '',
+    howFound: howFound || '',
     utm,
     custom: {
       verdict,
@@ -81,6 +83,7 @@ export function buildWidgetMessagePayload({ name, email, phone, message, consent
     consent,
     leadType: 'widget-message',
     landingPage: window.location.href.split('?')[0],
+    referrer: document.referrer || '',
     utm,
     custom: {
       sellingMotivation: '',

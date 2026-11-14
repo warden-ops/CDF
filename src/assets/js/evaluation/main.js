@@ -28,7 +28,7 @@ const state = {
   revealChoice: null,
   lead: { kind: 'idle' },
   regionQuery: '',
-  form: { name: '', email: '', phone: '', consent: false, website: '' },
+  form: { name: '', email: '', phone: '', howFound: '', consent: false, website: '' },
   widget: {
     open: false,
     sending: false,
@@ -137,7 +137,7 @@ function restart() {
   state.revealChoice = null;
   state.lead = { kind: 'idle' };
   state.regionQuery = '';
-  state.form = { name: '', email: '', phone: '', consent: false, website: '' };
+  state.form = { name: '', email: '', phone: '', howFound: '', consent: false, website: '' };
   state.widget = {
     open: false,
     sending: false,
@@ -512,6 +512,18 @@ function leadForm(gated) {
           <span class="sr-only">Téléphone</span>
           <input class="eval-input" name="phone" type="tel" autocomplete="tel" placeholder="(819) 555-0123" value="${escapeHtml(state.form.phone)}" required>
         </label>
+        <label class="block">
+          <span class="mb-2 block text-sm text-slate-300">Comment nous avez-vous trouvés? <span class="text-slate-500">(optionnel)</span></span>
+          <select class="eval-input eval-select" name="howFound">
+            <option value="" ${state.form.howFound ? '' : 'selected'}>Je préfère ne pas répondre</option>
+            <option value="google" ${state.form.howFound === 'google' ? 'selected' : ''}>Google (recherche)</option>
+            <option value="gbp" ${state.form.howFound === 'gbp' ? 'selected' : ''}>Fiche Google (Google Business Profile)</option>
+            <option value="ai" ${state.form.howFound === 'ai' ? 'selected' : ''}>Une IA (ChatGPT, Gemini, Perplexity…)</option>
+            <option value="social" ${state.form.howFound === 'social' ? 'selected' : ''}>Facebook / Instagram</option>
+            <option value="recommandation" ${state.form.howFound === 'recommandation' ? 'selected' : ''}>Recommandation</option>
+            <option value="autre" ${state.form.howFound === 'autre' ? 'selected' : ''}>Autre</option>
+          </select>
+        </label>
         <label class="eval-check">
           <input type="checkbox" name="consent" ${state.form.consent ? 'checked' : ''}>
           <span>J’accepte d’être contacté par l’équipe Chiasson de Francesco au sujet de cette évaluation. Consultez notre <a class="underline hover:text-white" href="confidentialite.html">politique de confidentialité</a>.</span>
@@ -649,6 +661,7 @@ async function handleLeadSubmit(formEl) {
     name: String(data.get('name') || ''),
     email: String(data.get('email') || ''),
     phone: String(data.get('phone') || ''),
+    howFound: String(data.get('howFound') || ''),
     consent: data.get('consent') === 'on',
     website: String(data.get('website') || '')
   };
@@ -669,6 +682,7 @@ async function handleLeadSubmit(formEl) {
     ...state.form,
     answers: state.answers,
     analysis: state.analysis,
+    howFound: state.form.howFound,
     leadType: state.revealChoice === 'yes' || state.analysis.scoring.verdict !== 'defavorable'
       ? 'evaluation'
       : 'market_info'
@@ -871,7 +885,7 @@ app.addEventListener('input', (event) => {
     const host = document.getElementById('region-results');
     if (host) host.innerHTML = regionSuggestions();
   }
-  if (el.name && ['name', 'email', 'phone'].includes(el.name)) {
+  if (el.name && ['name', 'email', 'phone', 'howFound'].includes(el.name)) {
     state.form[el.name] = el.value;
   }
   if (el.name === 'consent') {
