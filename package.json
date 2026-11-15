@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i src/tailwind/tailwind.css -o public/css/site.min.css --minify"
+    "build:css": "tailwindcss -i src/tailwind/tailwind.css -o public/css/site.min.css --minify",
+    "test": "node --test api/attribution.test.js src/assets/js/guide-intent.test.js"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"

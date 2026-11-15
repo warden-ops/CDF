@@ -132,6 +132,16 @@
     buildManageLink();
   }
 
+  if (!window.__cdfGuideBoot) {
+    window.__cdfGuideBoot = true;
+    ["/src/assets/js/guide-intent.js", "/src/assets/js/guide-lead.js"].forEach(function (src) {
+      var script = document.createElement("script");
+      script.src = src;
+      script.async = false;
+      document.head.appendChild(script);
+    });
+  }
+
   if (readChoice() === "granted") loadPixel();
 
   if (document.readyState === "loading") {

@@ -1,3 +1,12 @@
+const {
+  guideIntent,
+  guideTags,
+  attributionTags,
+  attributionCustomFields,
+  contactSource,
+  notesWithAttribution
+} = require('./attribution');
+
 const LOCATION_ID = process.env.GHL_LOCATION_ID || 'MJs18WfGQbOuO6E9SzIJ';
 const PIPELINE_ID = process.env.GHL_PIPELINE_ID || 'Ucqx5cCwaC2nPYP6FBsD';
 const PIPELINE_STAGE_ID = process.env.GHL_PIPELINE_STAGE_ID || 'c3a9748c-c1d2-431a-b3f8-076b486ec6b9';
@@ -141,7 +150,21 @@ function yesNo(value) {
   return '';
 }
 
+function appendAttribution(fields, payload) {
+  attributionCustomFields(payload).forEach((field) => fields.push(field));
+}
+
 function customFieldsFromPayload(payload) {
+  const notes = notesWithAttribution(payload);
+  const fields = [];
+
+  if (payload.leadType === 'guide') {
+    addField(fields, FIELDS.message, notes);
+    addField(fields, FIELDS.langue, 'Français');
+    appendAttribution(fields, payload);
+    return fields;
+  }
+
   const custom = payload.custom || {};
   const isQuiz = payload.leadType !== 'widget-message';
   const lookingTo = custom.sellingMotivation === 'no_sell'
@@ -154,9 +177,8 @@ function customFieldsFromPayload(payload) {
   const timeline = [verdict, scoreLabel].filter(Boolean).join(' · ');
   const yearsOwned = Number(custom.yearsOwned);
   const estimatedValue = Number(custom.estimatedValue);
-  const fields = [];
 
-  addField(fields, FIELDS.message, payload.notes || '');
+  addField(fields, FIELDS.message, notes);
   addField(fields, FIELDS.raison, motivation);
   addField(fields, FIELDS.timeline, timeline);
   addField(fields, FIELDS.typeDeContact, 'Lead Vendeur');
@@ -174,12 +196,15 @@ function customFieldsFromPayload(payload) {
     addField(fields, FIELDS.financialProfile, FINANCIAL_LABELS[custom.financialProfile] || '');
   }
 
+  appendAttribution(fields, payload);
   return fields;
 }
 
 const FORM_EVAL_TAG = 'form-eval';
 
 function tagsFromPayload(payload) {
+  if (payload.leadType === 'guide') return guideTags(payload);
+
   const tags = new Set([FORM_EVAL_TAG]);
   if (Array.isArray(payload.tags)) {
     payload.tags.filter(Boolean).forEach((tag) => tags.add(tag));
@@ -190,7 +215,59 @@ function tagsFromPayload(payload) {
   if (payload.leadType !== 'widget-message' && payload.custom?.verdict) {
     tags.add(`verdict-${payload.custom.verdict}`);
   }
+  attributionTags(payload).forEach((tag) => tags.add(tag));
   return [...tags];
+}
+
+function createsOpportunity(payload) {
+  return payload.leadType !== 'guide';
+}
+
+function validateLead(payload) {
+  if (!payload || typeof payload !== 'object') return { status: 400, error: 'Missing body' };
+  if (payload.website) return { status: 200, ignored: true };
+
+  const isGuide = payload.leadType === 'guide';
+  const email = String(payload.email || '').trim();
+  const phoneRaw = String(payload.phone || '').trim();
+  const phone = normalizePhone(phoneRaw);
+  const firstName = String(payload.firstName || '').trim();
+  const lastName = String(payload.lastName || '').trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!firstName) return { status: 400, error: 'Name required' };
+  if (isGuide && !lastName) return { status: 400, error: 'Last name required' };
+  if (isGuide) {
+    if (!emailOk) return { status: 400, error: 'Invalid email' };
+    if (phoneRaw && !phone) return { status: 400, error: 'Invalid phone' };
+    if (!guideIntent(payload)) return { status: 400, error: 'Guide required' };
+  } else {
+    if (email && !emailOk) return { status: 400, error: 'Invalid email' };
+    if (!phone) return { status: 400, error: 'Invalid phone' };
+  }
+  if (!payload.consent) return { status: 400, error: 'Consent required' };
+  return null;
+}
+
+function buildContactBody(payload) {
+  const email = String(payload.email || '').trim();
+  const phone = normalizePhone(payload.phone);
+  const firstName = String(payload.firstName || '').trim();
+  const lastName = String(payload.lastName || '').trim();
+  return {
+    locationId: LOCATION_ID,
+    firstName,
+    lastName: lastName || undefined,
+    name: payload.name || `${firstName} ${lastName}`.trim(),
+    email: email || undefined,
+    phone: phone || undefined,
+    city: payload.city || undefined,
+    state: 'QC',
+    country: 'CA',
+    source: contactSource(payload),
+    timezone: 'America/New_York',
+    customFields: customFieldsFromPayload(payload)
+  };
 }
 
 async function addTags(contactId, tags) {
@@ -209,6 +286,26 @@ async function addNote(contactId, body) {
     });
   } catch {
     // Notes scope is optional on some PITs.
+  }
+}
+
+async function upsertContact(body) {
+  const customFields = Array.isArray(body.customFields) ? body.customFields : [];
+  try {
+    return await ghl('/contacts/upsert', {
+      method: 'POST',
+      body: JSON.stringify(body)
+    });
+  } catch (error) {
+    const keyed = customFields.some((field) => field.key && !field.id);
+    if (!keyed) throw error;
+    return await ghl('/contacts/upsert', {
+      method: 'POST',
+      body: JSON.stringify({
+        ...body,
+        customFields: customFields.filter((field) => field.id)
+      })
+    });
   }
 }
 
@@ -235,7 +332,7 @@ async function createOpportunity(contactId, payload) {
   }
 }
 
-module.exports = async function handler(req, res) {
+async function handler(req, res) {
   const origin = req.headers.origin || '';
 
   if (req.method === 'OPTIONS') {
@@ -257,35 +354,10 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  if (!payload || typeof payload !== 'object') {
-    json(res, 400, { stored: false, error: 'Missing body' }, origin);
-    return;
-  }
-
-  if (payload.website) {
-    json(res, 200, { stored: false, ignored: true }, origin);
-    return;
-  }
-
-  const email = String(payload.email || '').trim();
-  const phone = normalizePhone(payload.phone);
-  const firstName = String(payload.firstName || '').trim();
-  const lastName = String(payload.lastName || '').trim();
-
-  if (!firstName) {
-    json(res, 400, { stored: false, error: 'Name required' }, origin);
-    return;
-  }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    json(res, 400, { stored: false, error: 'Invalid email' }, origin);
-    return;
-  }
-  if (!phone) {
-    json(res, 400, { stored: false, error: 'Invalid phone' }, origin);
-    return;
-  }
-  if (!payload.consent) {
-    json(res, 400, { stored: false, error: 'Consent required' }, origin);
+  const problem = validateLead(payload);
+  if (problem) {
+    if (problem.ignored) json(res, 200, { stored: false, ignored: true }, origin);
+    else json(res, problem.status, { stored: false, error: problem.error }, origin);
     return;
   }
 
@@ -295,23 +367,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const upserted = await ghl('/contacts/upsert', {
-      method: 'POST',
-      body: JSON.stringify({
-        locationId: LOCATION_ID,
-        firstName,
-        lastName: lastName || undefined,
-        name: payload.name || `${firstName} ${lastName}`.trim(),
-        email: email || undefined,
-        phone,
-        city: payload.city || undefined,
-        state: 'QC',
-        country: 'CA',
-        source: payload.source || 'Évaluation timing vente',
-        timezone: 'America/New_York',
-        customFields: customFieldsFromPayload(payload)
-      })
-    });
+    const upserted = await upsertContact(buildContactBody(payload));
 
     const contact = upserted.contact || upserted;
     const contactId = contact.id;
@@ -320,23 +376,35 @@ module.exports = async function handler(req, res) {
       return;
     }
 
+    const tags = tagsFromPayload(payload);
     let tagged = false;
     try {
-      await addTags(contactId, tagsFromPayload(payload));
+      await addTags(contactId, tags);
       tagged = true;
     } catch {
+      const fallback = payload.leadType === 'guide'
+        ? tags.filter((tag) => tag.indexOf('trouves-') !== 0)
+        : [FORM_EVAL_TAG];
       try {
-        await addTags(contactId, [FORM_EVAL_TAG]);
-        tagged = true;
+        if (fallback.length) await addTags(contactId, fallback);
+        tagged = fallback.length > 0;
       } catch {
         tagged = false;
       }
     }
-    await addNote(contactId, payload.notes);
-    const opportunity = await createOpportunity(contactId, payload);
+    await addNote(contactId, notesWithAttribution(payload));
+    const opportunity = createsOpportunity(payload)
+      ? await createOpportunity(contactId, payload)
+      : false;
 
     json(res, 200, { stored: true, contactId, tagged, opportunity }, origin);
   } catch (error) {
     json(res, 502, { stored: false, error: 'CRM request failed' }, origin);
   }
 };
+
+handler.validateLead = validateLead;
+handler.buildContactBody = buildContactBody;
+handler.tagsFromPayload = tagsFromPayload;
+handler.createsOpportunity = createsOpportunity;
+module.exports = handler;
