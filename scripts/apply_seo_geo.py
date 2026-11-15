@@ -282,7 +282,7 @@ REGION_META = {
     "north-hatley": ("Courtier immobilier à North Hatley | CDF", "Acheter ou vendre à North Hatley et au lac Massawippi. L'équipe Chiasson de Francesco, courtiers RE/MAX en Estrie."),
     "orford": ("Courtier immobilier à Orford, maisons et chalets, CDF", "Maisons et chalets à Orford, au pied du mont et du parc national. Équipe Chiasson de Francesco en Estrie."),
     "richmond": ("Courtier immobilier à Richmond | rivière Saint-François | CDF", "Acheter ou vendre à Richmond, sur la rivière Saint-François. Courtiers Chiasson de Francesco, RE/MAX."),
-    "sherbrooke": ("Courtier immobilier à Sherbrooke, Chiasson De Francesco", "Acheter ou vendre à Sherbrooke : Les Nations, Fleurimont, Lennoxville, Mont-Bellevue. Équipe Chiasson de Francesco, RE/MAX."),
+    "sherbrooke": ("Quartiers de Sherbrooke : le marché immobilier local", "Les quartiers de Sherbrooke : Fleurimont, les Nations, Lennoxville et l'ouest. Ventes, inscriptions et marché local de la ville. Équipe Chiasson De Francesco."),
     "stanstead": ("Courtier immobilier à Stanstead | frontière | CDF", "Propriétés à Stanstead, près du lac Memphrémagog et de la frontière. Équipe Chiasson de Francesco."),
     "sutton": ("Courtier immobilier à Sutton | montagne | CDF", "Acheter ou vendre à Sutton, village de montagne en Estrie. Ski, arts et maisons : équipe Chiasson de Francesco."),
     "val-des-sources": ("Courtier à Val-des-Sources | CDF", "Maisons à Val-des-Sources (Asbestos). Courtiers Chiasson de Francesco pour un achat ou une vente en Estrie."),
@@ -391,7 +391,6 @@ BROKERS = {
         "sameAs": [
             "https://www.remax-quebec.com/fr/courtiers-immobiliers/p-o.chiasson",
             "https://www.realtor.ca/courtier-immobilier/2110096/pierre-olivier-chiasson-157-boul-jacques-cartier-s-sherbrooke-quebec-j1j2z4",
-            "https://pierreoliviercourtier.com/",
         ],
     },
     "marco.html": {
@@ -683,7 +682,7 @@ def person_json_ld(rel: str, broker: dict) -> dict:
         "image": broker["image"],
         "telephone": broker["tel"],
         "worksFor": {
-            "@type": "RealEstateAgent",
+            "@type": ["RealEstateAgent", "LocalBusiness"],
             "@id": f"{BASE}/#organization",
             "name": "Équipe Chiasson De Francesco",
             "url": f"{BASE}/",
@@ -703,6 +702,10 @@ def person_json_ld(rel: str, broker: dict) -> dict:
                 "postalCode": "J1J 2Z4",
                 "addressCountry": "CA",
             },
+            "sameAs": [
+                "https://www.facebook.com/equipechiassondefrancesco",
+                "https://www.instagram.com/equipechiassondefrancesco",
+            ],
             "description": "Équipe de courtiers immobiliers résidentiels et commerciaux à Sherbrooke et en Estrie, affiliée à RE/MAX D'ABORD",
             "knowsAbout": [
                 "courtage immobilier résidentiel",
@@ -714,7 +717,7 @@ def person_json_ld(rel: str, broker: dict) -> dict:
         },
         "memberOf": {
             "@type": "Organization",
-            "name": "RE/MAX D'ABORD",
+            "name": "RE/MAX D'ABORD, agence immobilière",
             "url": "https://remax-dabord.com/",
         },
         "address": {

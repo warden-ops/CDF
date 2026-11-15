@@ -356,7 +356,7 @@ REMAINING = [
 def nav_root() -> str:
     return """  <nav class="py-4 px-6 fixed w-full top-0 z-50 bg-brand-navy shadow-md">
     <div class="relative max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html"><img src="/src/assets/logo.png" alt="Chiasson & De Francesco" class="h-10 md:h-12 w-auto"></a>
+      <a href="index.html"><img src="/src/assets/logo.png" alt="Équipe Chiasson De Francesco, courtiers immobiliers" class="h-10 md:h-12 w-auto"></a>
       <div class="hidden md:flex items-center gap-10">
         <a href="index.html" class="text-white hover:text-brand-red font-medium">Accueil</a>
         <a href="index.html#about" class="text-white hover:text-brand-red font-medium">Équipe</a>
@@ -387,7 +387,7 @@ def footer_root() -> str:
         <a href="regions-desservies.html" class="hover:text-brand-red">Régions</a>
         <a href="blog.html" class="hover:text-brand-red">Blogue</a>
       </div>
-      <p class="text-center text-xs text-gray-500 mt-6">&copy; 2026 Équipe Chiasson & De Francesco. 157 boul. Jacques-Cartier Sud, Sherbrooke.</p>
+      <p class="text-center text-xs text-gray-500 mt-6">&copy; 2026 Équipe Chiasson De Francesco. 157 boul. Jacques-Cartier Sud, Sherbrooke.</p>
     </div>
   </footer>
   <script>var b=document.getElementById('mobile-menu-btn'),m=document.getElementById('mobile-menu');if(b&&m)b.addEventListener('click',function(){m.classList.toggle('hidden');});</script>"""

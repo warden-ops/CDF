@@ -239,7 +239,7 @@ CITY_DISPLAY = {
 }
 
 REGION_ANCHORS = {
-    "sherbrooke": "Courtier immobilier à Sherbrooke",
+    "sherbrooke": "Quartiers de Sherbrooke",
     "magog": "Courtier immobilier à Magog",
     "orford": "Courtier immobilier à Orford",
     "bromont": "Courtier immobilier à Bromont",
@@ -1062,7 +1062,7 @@ def render_detail_page(listing: dict, detail: dict) -> str:
           <a href="https://realestatesherbrooke.com/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors">realestatesherbrooke.com</a>
         </div>
         <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-500">
-          <p>&copy; 2026 Équipe Chiasson & De Francesco. Tous droits réservés.</p>
+          <p>&copy; 2026 Équipe Chiasson De Francesco. Tous droits réservés.</p>
           <p class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2">
             <a href="/regions-desservies.html" class="hover:text-white transition-colors">Régions desservies</a>
             <a href="/confidentialite.html" class="hover:text-white transition-colors">Politique de confidentialité</a>
