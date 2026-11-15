@@ -239,7 +239,7 @@ CITY_DISPLAY = {
 }
 
 REGION_ANCHORS = {
-    "sherbrooke": "Courtier immobilier à Sherbrooke",
+    "sherbrooke": "Quartiers de Sherbrooke",
     "magog": "Courtier immobilier à Magog",
     "orford": "Courtier immobilier à Orford",
     "bromont": "Courtier immobilier à Bromont",

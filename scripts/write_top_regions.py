@@ -13,10 +13,10 @@ PAGES = [
     {
         "slug": "sherbrooke",
         "name": "Sherbrooke",
-        "title": "Courtier immobilier à Sherbrooke, Chiasson De Francesco",
-        "description": "Acheter ou vendre à Sherbrooke : Les Nations, Fleurimont, Lennoxville, Mont-Bellevue. Équipe Chiasson de Francesco, RE/MAX.",
-        "h1": "Courtiers immobiliers à Sherbrooke : acheter, vendre, investir",
-        "lead": "L'équipe Chiasson de Francesco, courtiers immobiliers RE/MAX D'ABORD à Sherbrooke, accompagne acheteurs et vendeurs dans Les Nations, Fleurimont, Lennoxville, Mont-Bellevue, Brompton et Rock Forest.",
+        "title": "Quartiers de Sherbrooke : le marché immobilier local",
+        "description": "Les quartiers de Sherbrooke : Fleurimont, les Nations, Lennoxville et l'ouest. Ventes, inscriptions et marché local de la ville. Équipe Chiasson De Francesco.",
+        "h1": "Quartiers de Sherbrooke et marché local",
+        "lead": "Cette page décrit les quartiers de Sherbrooke et le marché local : quatre arrondissements, Fleurimont, les Nations, Lennoxville et l'ouest de la ville. Pour joindre un courtier immobilier à Sherbrooke, voyez l'accueil de l'Équipe Chiasson De Francesco, RE/MAX D'ABORD.",
         "intro": "Sherbrooke est le pôle urbain de l'Estrie : universités, hôpitaux, centre-ville et quartiers familiaux. Un courtier local sert autant à lire le prix réel d'une rue qu'à éviter une offre trop haute ou trop basse.",
         "sections": [
             (
