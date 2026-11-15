@@ -98,8 +98,8 @@ def destination_file(old_path: str) -> Path:
     if relative.endswith(".html"):
         return ROOT / relative
     if relative.endswith("/"):
-        relative = relative[:-1]
-    return ROOT / relative / "index.html"
+        return ROOT / relative / "index.html"
+    return ROOT / (relative + ".html")
 
 
 def is_stub(path: Path) -> bool:
