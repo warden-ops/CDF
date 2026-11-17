@@ -4,14 +4,13 @@
   "searchUrl": null,
   "registryPath": "data/properties.json",
   "remax": {
-    "brokerSlug": "p-o.chiasson, marco.defrancesco, jade.sirois, pierreluc.giroux",
-    "brokerName": "Pierre-Olivier Chiasson, Marco De Francesco, Jade Sirois, Pierre-Luc Giroux",
-    "brokerMemberNo": "124729, 119714, 141323, 140191",
+    "brokerSlug": "p-o.chiasson, marco.defrancesco, jade.sirois",
+    "brokerName": "Pierre-Olivier Chiasson, Marco De Francesco, Jade Sirois",
+    "brokerMemberNo": "124729, 119714, 141323",
     "brokerIdAgent": [
       24115,
       21772,
-      26057,
-      25873
+      26057
     ],
     "brokerSource": "team",
     "agentUrl": "https://www.remax-quebec.com/fr/courtiers-immobiliers/p-o.chiasson",

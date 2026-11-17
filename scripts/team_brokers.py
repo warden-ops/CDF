@@ -41,16 +41,6 @@ TEAM_BROKERS: list[dict] = [
         "profile": "/jade.html",
         "job": "Courtière immobilière résidentielle",
     },
-    {
-        "slug": "pierreluc.giroux",
-        "idagent": 25873,
-        "no_membre": "140191",
-        "name": "Pierre-Luc Giroux",
-        "phone": "514-889-2927",
-        "email": "pierreluc.giroux@remax-quebec.com",
-        "profile": "/pierre-luc.html",
-        "job": "Courtier immobilier résidentiel",
-    },
 ]
 
 TEAM_BY_MEMBER: dict[str, dict] = {broker["no_membre"]: broker for broker in TEAM_BROKERS}

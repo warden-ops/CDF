@@ -1,6 +1,6 @@
 # Centris periodic sync
 
-Discovers active listings for every courtier of the team (Pierre-Olivier Chiasson, Marco De Francesco, Jade Sirois, Pierre-Luc Giroux; see `scripts/team_brokers.py`), then downloads **full photo galleries** from Centris for each ULS, generates a **1200×630** social share image (`og-share.jpg`) per property, and writes sync metadata to `data/centris_listings.json`.
+Discovers active listings for every courtier of the team (Pierre-Olivier Chiasson, Marco De Francesco, Jade Sirois; see `scripts/team_brokers.py`), then downloads **full photo galleries** from Centris for each ULS, generates a **1200×630** social share image (`og-share.jpg`) per property, and writes sync metadata to `data/centris_listings.json`.
 
 Some team mandates are on Centris but absent from the RE/MAX Québec inscriptions API (no `BrokerId` returns them, and `GET /api/inscriptions/{uls}` is 404). Those ULS are listed in `data/centris_pinned.json`. The daily sync keeps them while the Centris page still shows a price and a description, and drops them when Centris says the listing is gone. When RE/MAX starts returning the same ULS, the normal RE/MAX detail path takes over.
 

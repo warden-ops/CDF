@@ -170,6 +170,32 @@ function logos() {
 }
 
 function callCard() {
+  const brokers = [
+    {
+      name: 'Pierre-Olivier Chiasson',
+      title: 'Courtier immobilier résidentiel et commercial',
+      phone: '819-919-4631',
+      tel: '+18199194631',
+      src: '/assets-v2/pierre-olivier.webp',
+      small: '/assets-v2/pierre-olivier-120.webp'
+    },
+    {
+      name: 'Marco De Francesco',
+      title: 'Courtier immobilier résidentiel et commercial',
+      phone: '819-562-0656',
+      tel: '+18195620656',
+      src: '/assets-v2/marco.webp',
+      small: '/assets-v2/marco-120.webp'
+    },
+    {
+      name: 'Jade Sirois',
+      title: 'Courtière immobilière résidentiel',
+      phone: '819-434-2652',
+      tel: '+18194342652',
+      src: '/assets-v2/jade.webp',
+      small: '/assets-v2/jade-120.webp'
+    }
+  ];
   const widget = state.widget;
   const messagePanel = widget.open ? `
     <form class="eval-call-panel" data-form="widget-message" novalidate>
@@ -205,28 +231,24 @@ function callCard() {
     </form>
   ` : '';
 
+  const brokerList = brokers.map((broker) => `
+        <li class="eval-broker">
+          <img src="${broker.small}" srcset="${broker.small} 120w, ${broker.src} 1000w" sizes="52px" width="120" height="120" alt="Portrait de ${broker.name}, ${broker.title}" loading="lazy" decoding="async"${broker.name.startsWith('Pierre-Olivier') ? ` onerror="this.onerror=null;this.src='./src/assets/images/chiassondefrancescoteam.jpg';"` : ''}>
+          <div class="min-w-0 flex-1">
+            <p class="font-heading text-base leading-tight text-brand-navy">${broker.name}</p>
+            <p class="eval-broker-title">${broker.title}</p>
+            <a class="eval-call-number" href="tel:${broker.tel}">${broker.phone}</a>
+          </div>
+        </li>`).join('');
+
   return `
     <div class="eval-call-wrap">
       ${messagePanel}
-      <div class="eval-call">
-        <div class="relative shrink-0">
-          <img src="./src/assets/pierre-olivier-chiasson.webp" alt="Pierre-Olivier Chiasson" onerror="this.onerror=null;this.src='./src/assets/images/chiassondefrancescoteam.jpg';">
-          <span class="eval-online absolute -bottom-0.5 -right-0.5" aria-hidden="true"></span>
-        </div>
-        <div class="min-w-0 flex-1">
-          <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="text-[10px] font-medium text-emerald-700 uppercase tracking-wide">Disponible maintenant</span>
-          </div>
-          <p class="font-heading text-base leading-tight text-brand-navy mt-0.5 truncate">Pierre-Olivier Chiasson</p>
-          <a class="eval-call-number" href="tel:+18199194631">819-919-4631</a>
-          <p class="text-[11px] text-slate-500 truncate">Courtier immobilier, Estrie</p>
-        </div>
-        <div class="eval-call-actions">
-          <a class="eval-call-action eval-call-action--phone" href="tel:+18199194631" aria-label="Appeler Pierre-Olivier au 819-919-4631">
-            <span class="eval-call-icon">${icons().phone}</span>
-            <span>Appeler</span>
-          </a>
+      <div class="eval-call eval-call--team">
+        <ul class="eval-brokers">
+          ${brokerList}
+        </ul>
+        <div class="eval-call-actions eval-call-actions--team">
           <button type="button" class="eval-call-action eval-call-action--message" data-action="open-message" aria-expanded="${widget.open ? 'true' : 'false'}">
             <span class="eval-call-icon">${icons().message}</span>
             <span>Écrire</span>
