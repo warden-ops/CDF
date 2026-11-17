@@ -46,5 +46,5 @@ Inchangées: les 3 pages lac (regions/lac-aylmer, lac-massawippi, lac-memphremag
 - sitemap.xml: lastmod 2026-10-10 sur les 31 pages, jacques-cartier ajoutée (125 URL). robots.txt inchangé.
 - Toutes les pages lancées: index, follow; canonical sur chiassondefrancesco.ca.
 - Retirés: notes d'aperçu, chips Exemple/Aperçu, blocs vides, faux avis, fausses fiches, faux billets, carte à intégrer, programmes RE/MAX non rédigés, formulaire maquette (remplacé par un bouton vers evaluation.html), matrice de liens et liens vers pages absentes.
-- Liens propres remappés vers les pages en ligne (.html). Pierre-Luc Giroux: pas de page profil en ligne, lien retiré.
+- Liens propres remappés vers les pages en ligne (.html).
 - Générateur: /workspace/cdf-v2/sector-gen/prod_build.py, vérif: prod_verify.py.

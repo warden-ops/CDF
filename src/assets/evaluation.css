@@ -310,6 +310,119 @@ body.eval-body {
   box-shadow: 0 0 0 2px #fff;
 }
 
+.eval-call--team {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  padding: 0.55rem 0.7rem 0.6rem;
+  max-height: min(70dvh, 26rem);
+  overflow: auto;
+}
+
+.eval-brokers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.eval-broker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.eval-broker + .eval-broker {
+  border-top: 1px solid #e6edf5;
+  padding-top: 0.35rem;
+}
+
+.eval-call--team img {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+}
+
+.eval-broker-title {
+  margin-top: 0.08rem;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  color: #64748b;
+}
+
+.eval-call-actions--team {
+  justify-content: flex-end;
+}
+
+.eval-call-actions--team .eval-call-action {
+  flex-direction: row;
+  width: auto;
+  gap: 0.35rem;
+}
+
+body:has(#cdf-consent:not([hidden])) .eval-call-wrap {
+  bottom: 13.75rem;
+}
+
+@media (max-width: 639px) {
+  .eval-call--team {
+    max-height: none;
+    overflow: visible;
+    padding: 0.55rem 0.6rem 0.5rem;
+  }
+
+  .eval-brokers {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .eval-broker {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .eval-broker + .eval-broker {
+    border-top: 0;
+    padding-top: 0;
+    border-left: 1px solid #e6edf5;
+    padding-left: 0.45rem;
+    margin-left: 0.45rem;
+  }
+
+  .eval-call--team img {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .eval-broker .font-heading {
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .eval-broker-title {
+    font-size: 0.58rem;
+    line-height: 1.2;
+  }
+
+  .eval-call--team .eval-call-number {
+    font-size: 0.72rem;
+  }
+
+  #eval-app > section {
+    padding-bottom: 16rem;
+  }
+
+  body:has(#cdf-consent:not([hidden])) .eval-call-wrap {
+    bottom: 17.25rem;
+  }
+}
+
 .eval-call-number {
   display: inline-block;
   margin-top: 0.1rem;
