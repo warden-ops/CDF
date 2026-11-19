@@ -1,37 +1,49 @@
 User-agent: *
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: GPTBot
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: OAI-SearchBot
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: ChatGPT-User
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: anthropic-ai
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: Google-Extended
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: GoogleOther
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: Applebot-Extended
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: Bingbot
+Disallow: /maquette-accueil/
 Allow: /
 
 User-agent: CCBot
+Disallow: /maquette-accueil/
 Allow: /
 
 Sitemap: https://chiassondefrancesco.ca/sitemap.xml

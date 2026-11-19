@@ -26,7 +26,9 @@ GTAG_BLOCK = re.compile(
 
 GENERIC_PREFIX = "Équipe Chiasson de Francesco, courtiers immobiliers RE/MAX à Sherbrooke et en Estrie."
 
-SKIP_DIRS = {".git", "node_modules", "emails", ".agents", ".cursor", "public"}
+# maquette-accueil is a noindex review mockup. Keep it out of the SEO pass
+# so a later run cannot flip its robots meta to index,follow.
+SKIP_DIRS = {".git", "node_modules", "emails", ".agents", ".cursor", "public", "maquette-accueil"}
 
 PAGE_META = {
     "index.html": None,  # keep hand-written homepage meta
