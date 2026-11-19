@@ -290,9 +290,14 @@
     card.style.bottom = bottom + 'px';
   }
 
+  function popupIsOpen() {
+    var popup = document.getElementById('cdf-guide-popup');
+    return !!(popup && !popup.hidden);
+  }
+
   function openCard(persist) {
     var card = document.getElementById('cdf-guide-card');
-    if (!card || cardOpened || storageGet(DONE_KEY) === '1') return;
+    if (!card || cardOpened || storageGet(DONE_KEY) === '1' || popupIsOpen()) return;
     if (!previewOpen() && (storageGet(CARD_KEY) === 'shown' || storageGet(CARD_KEY) === 'dismissed')) return;
     card.hidden = false;
     cardOpened = true;
@@ -390,6 +395,9 @@
   }
 
   function markDone(form) {
+    try {
+      document.dispatchEvent(new CustomEvent('cdf-guide-stored', { detail: { form: form } }));
+    } catch (err) {}
     storageSet(DONE_KEY, '1');
     storageSet(CARD_KEY, 'dismissed');
     var host = form.parentNode;
@@ -469,6 +477,7 @@
       var y = window.scrollY || doc.scrollTop || 0;
       var deep = scrollable > 480 && y / scrollable >= 0.4;
       if (y >= 700 || deep) {
+        if (popupIsOpen()) return;
         openCard(true);
         window.removeEventListener('scroll', onScroll);
       }
@@ -482,6 +491,7 @@
       if (event.relatedTarget || event.toElement) return;
       var active = document.activeElement;
       if (active && active.closest && active.closest('#cdf-guide-inline')) return;
+      if (popupIsOpen()) return;
       openCard(true);
     });
   }
@@ -524,6 +534,21 @@
     });
     armCard();
   }
+
+  window.CDFGuideLead = {
+    doneKey: DONE_KEY,
+    content: function (prefix) {
+      var intent = pageIntent();
+      var copy = copyFor(intent);
+      return {
+        kicker: 'Guide gratuit',
+        title: copy.title,
+        text: copy.text,
+        card: copy.card,
+        formHtml: formHtml(prefix, intent, readParams())
+      };
+    }
+  };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
