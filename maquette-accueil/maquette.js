@@ -1,6 +1,6 @@
-/* Carrousels, menu et apparition au défilement. Aucune librairie. */
+/* Menu, défilement horizontal, parallaxe légère. Aucune librairie. */
 (function () {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.getElementById("menu");
   var label = document.getElementById("menu-label");
@@ -19,58 +19,51 @@
       setMenu(!mast.classList.contains("is-open"));
     });
   }
-
   if (menu) {
     menu.addEventListener("click", function (event) {
       if (event.target.closest("a")) setMenu(false);
     });
   }
-
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") setMenu(false);
   });
 
-  function stepOf(track) {
-    var card = track.querySelector("li");
-    if (!card) return Math.max(240, track.clientWidth * 0.8);
-    var styles = window.getComputedStyle(track);
-    var gap = parseFloat(styles.columnGap || styles.gap) || 16;
-    return card.getBoundingClientRect().width + gap;
-  }
-
   document.querySelectorAll("[data-carousel]").forEach(function (root) {
-    var track = root.querySelector(".track");
+    var track = root.querySelector("[data-track]");
     if (!track) return;
     root.addEventListener("click", function (event) {
       var button = event.target.closest("[data-dir]");
       if (!button) return;
+      var card = track.querySelector("li");
+      var gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap) || 0;
+      var delta = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
       track.scrollBy({
-        left: Number(button.getAttribute("data-dir")) * stepOf(track),
-        behavior: reduce ? "auto" : "smooth"
+        left: Number(button.getAttribute("data-dir")) * delta,
+        behavior: reduce.matches ? "auto" : "smooth"
       });
     });
   });
 
-  if (reduce || !("IntersectionObserver" in window)) return;
+  var heroImg = document.querySelector(".hero-media img");
+  var ticking = false;
+  function parallax() {
+    ticking = false;
+    if (!heroImg || reduce.matches) return;
+    var y = window.scrollY || 0;
+    if (y > window.innerHeight) return;
+    heroImg.style.transform = "translate3d(0," + (y * 0.22) + "px,0) scale(1.08)";
+  }
+  if (heroImg && !reduce.matches) {
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(parallax);
+    }, { passive: true });
+  }
 
-  var nodes = document.querySelectorAll(".reveal");
-  if (!nodes.length) return;
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-in");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.16, rootMargin: "0px 0px -6% 0px" }
-  );
-
-  nodes.forEach(function (node) {
-    var rect = node.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) node.classList.add("is-in");
-    node.classList.add("is-armed");
-    observer.observe(node);
-  });
+  var extra = document.createElement("style");
+  extra.textContent =
+    "#cdf-guide-inline{position:relative;z-index:2;margin-top:-2.4rem;border-radius:2rem 2rem 0 0;background:#fff}" +
+    "#cdf-guide-inline h2{font-family:\"Playfair Display\",Georgia,serif}";
+  document.head.appendChild(extra);
 })();
