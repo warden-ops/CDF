@@ -92,6 +92,11 @@
       "permanent": true
     },
     {
+      "source": "/prop-1223-rue-mansourati-sherbrooke-19533255.html",
+      "destination": "/ca/qc/sherbrooke/rock-forest/1223-rue-mansourati/",
+      "permanent": true
+    },
+    {
       "source": "/prop-16-rue-lisee-cookshire-eaton-16447016.html",
       "destination": "/proprietes.html",
       "permanent": true

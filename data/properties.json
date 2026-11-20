@@ -192,6 +192,18 @@
       "shareTitle": "Fonds de commerce à vendre à Sherbrooke : 182, Rue Wellington N.",
       "legacyFile": "prop-182-rue-wellington-n-10043722.html",
       "fallbackImage": "182wells.jpg"
+    },
+    {
+      "uls": "19533255",
+      "country": "ca",
+      "province": "qc",
+      "city": "sherbrooke",
+      "sector": "rock-forest",
+      "street": "1223-rue-mansourati",
+      "title": "1223 Rue Mansourati, Sherbrooke",
+      "shareTitle": "Résidentielle à vendre à Sherbrooke : 1223 Rue Mansourati",
+      "legacyFile": "prop-1223-rue-mansourati-sherbrooke-19533255.html",
+      "fallbackImage": "19533255.jpg"
     }
   ]
 }
