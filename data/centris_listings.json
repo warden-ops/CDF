@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T19:34:47.098961+00:00",
+  "generatedAt": "2026-11-21T18:38:21.986403+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -17,9 +17,7 @@
     "viewAllUrl": "https://www.remax-quebec.com/fr/resultats?BrokerId=24115&Sold=0",
     "fallback": null,
     "discoveredCount": 17,
-    "protectedUls": [
-      "15613071"
-    ],
+    "protectedUls": [],
     "syncLimited": false
   },
   "discoveredUls": [
@@ -92,7 +90,7 @@
       ],
       "photoCount": 36,
       "ogShareImage": "src/assets/images/proprietes/19533255/og-share.jpg",
-      "publicPath": null
+      "publicPath": "/ca/qc/sherbrooke/rock-forest/1223-rue-mansourati/"
     },
     {
       "id": "25394249",
@@ -309,49 +307,8 @@
     },
     {
       "id": "15613071",
-      "propertyUrl": "https://www.centris.ca/fr/maison~a-vendre~sherbrooke-fleurimont/15613071",
-      "ogTitle": "Maison &#xE0; vendre &#xE0; Sherbrooke (Fleurimont)",
-      "ogImage": "https://mspublic.centris.ca/media.ashx?id=ADDD250DAC3E2B5DDDDDDDDDDD&t=pi&w=1260&h=1024&sm=c",
-      "price": null,
-      "photos": [
-        "01.jpg",
-        "02.jpg",
-        "03.jpg",
-        "04.jpg",
-        "05.jpg",
-        "06.jpg",
-        "07.jpg",
-        "08.jpg",
-        "09.jpg",
-        "10.jpg",
-        "11.jpg",
-        "12.jpg",
-        "13.jpg",
-        "14.jpg",
-        "15.jpg",
-        "16.jpg",
-        "17.jpg",
-        "18.jpg",
-        "19.jpg",
-        "20.jpg",
-        "21.jpg",
-        "22.jpg",
-        "23.jpg",
-        "24.jpg",
-        "25.jpg",
-        "26.jpg",
-        "27.jpg",
-        "28.jpg",
-        "29.jpg",
-        "30.jpg",
-        "31.jpg",
-        "32.jpg",
-        "33.jpg",
-        "34.jpg"
-      ],
-      "photoCount": 34,
-      "ogShareImage": "src/assets/images/proprietes/15613071/og-share.jpg",
-      "publicPath": "/ca/qc/sherbrooke/fleurimont/2077-chemin-galvin/"
+      "propertyUrl": "https://www.centris.ca/fr/propriete~a-vendre/15613071",
+      "error": "404 Client Error: Not Found for url: https://www.centris.ca/fr/inscription?listingnotfound=15613071"
     },
     {
       "id": "28409515",
