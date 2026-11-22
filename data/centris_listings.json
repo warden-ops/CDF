@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T18:38:21.986403+00:00",
+  "generatedAt": "2026-11-22T18:58:43.960354+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -16,14 +16,13 @@
     "agentUrl": "https://www.remax-quebec.com/fr/courtiers-immobiliers/p-o.chiasson",
     "viewAllUrl": "https://www.remax-quebec.com/fr/resultats?BrokerId=24115&Sold=0",
     "fallback": null,
-    "discoveredCount": 17,
+    "discoveredCount": 16,
     "protectedUls": [],
     "syncLimited": false
   },
   "discoveredUls": [
     "10043722",
     "11185705",
-    "15613071",
     "16190804",
     "16311471",
     "17095739",
@@ -39,10 +38,19 @@
     "28699947",
     "9745288"
   ],
-  "removedListings": [],
-  "prunedPages": [],
+  "removedListings": [
+    "15613071"
+  ],
+  "prunedPages": [
+    "/home/runner/work/CDF/CDF/ca/qc/sherbrooke/fleurimont/2077-chemin-galvin/index.html",
+    "/home/runner/work/CDF/CDF/prop-2077-chemin-galvin-sherbrooke-15613071.html",
+    "proprietes.html:/ca/qc/sherbrooke/fleurimont/2077-chemin-galvin/"
+  ],
   "maxListings": 30,
-  "removedStale": [],
+  "removedStale": [
+    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/15613071",
+    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/15613071.jpg"
+  ],
   "listings": [
     {
       "id": "19533255",
@@ -304,11 +312,6 @@
       "photoCount": 26,
       "ogShareImage": "src/assets/images/proprietes/16311471/og-share.jpg",
       "publicPath": "/ca/qc/coaticook/centre/339-rue-child/"
-    },
-    {
-      "id": "15613071",
-      "propertyUrl": "https://www.centris.ca/fr/propriete~a-vendre/15613071",
-      "error": "404 Client Error: Not Found for url: https://www.centris.ca/fr/inscription?listingnotfound=15613071"
     },
     {
       "id": "28409515",
