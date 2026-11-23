@@ -286,15 +286,43 @@ def municipality_label(detail: dict, listing: dict) -> str:
 TEAM_NAME = "Équipe Chiasson De Francesco"
 
 
-def build_page_title(share_title: str, headline: str, city: str) -> str:
-    # Team name first in the title when it fits, short "CDF" suffix otherwise.
-    for base in (share_title, f"{headline} à {city}"):
-        candidate = f"{base} | {TEAM_NAME}"
-        if len(candidate) <= 70:
-            return candidate
+def title_place(sector: str) -> str:
+    """Neighbourhood label for a <title>. Keeps hyphens the visible name uses."""
+    special = {
+        "mont-bellevue": "Mont-Bellevue",
+        "la-cite-limoilou": "La Cité-Limoilou",
+    }
+    if sector in special:
+        return special[sector]
+    return sector_label(sector)
+
+
+def build_page_title(
+    share_title: str,
+    headline: str,
+    city: str,
+    street: str = "",
+    sector: str = "",
+) -> str:
+    """At most 60 characters. Street and neighbourhood when the city title would collide."""
+    place = title_place(sector) if sector else ""
+    verb = "à louer" if "louer" in headline else "à vendre"
+    city_team = f"{headline} à {city} | {TEAM_NAME}"
+    if len(city_team) <= 60:
+        return city_team
+    if street and place:
+        for candidate in (
+            f"{street} {verb} | {place} | CDF",
+            f"{street} | {place} | CDF",
+            f"{street} {verb} | CDF",
+        ):
+            if len(candidate) <= 60:
+                return candidate
     page_title = f"{share_title} | CDF"
     if len(page_title) > 60:
         page_title = f"{headline} à {city} | CDF"
+    if len(page_title) > 60:
+        page_title = page_title[:59].rstrip()
     return page_title
 
 
@@ -738,7 +766,7 @@ def render_detail_page(listing: dict, detail: dict) -> str:
     city = municipality_label(detail, listing)
     street_addr = street_short(detail, listing)
     share_title = f"{headline} à {city} : {street_addr}" if street_addr else f"{headline} à {city}"
-    page_title = build_page_title(share_title, headline, city)
+    page_title = build_page_title(share_title, headline, city, street_addr, listing.get("sector") or "")
     desc = description_text(detail, listing)
     meta_desc = desc[:155].rsplit(" ", 1)[0] + "…" if len(desc) > 160 else desc
     meta_attr = meta_desc.replace('"', "&quot;")
