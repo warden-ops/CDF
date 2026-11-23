@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T18:58:43.960354+00:00",
+  "generatedAt": "2026-11-23T23:18:25.965674+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -38,19 +38,10 @@
     "28699947",
     "9745288"
   ],
-  "removedListings": [
-    "15613071"
-  ],
-  "prunedPages": [
-    "/home/runner/work/CDF/CDF/ca/qc/sherbrooke/fleurimont/2077-chemin-galvin/index.html",
-    "/home/runner/work/CDF/CDF/prop-2077-chemin-galvin-sherbrooke-15613071.html",
-    "proprietes.html:/ca/qc/sherbrooke/fleurimont/2077-chemin-galvin/"
-  ],
+  "removedListings": [],
+  "prunedPages": [],
   "maxListings": 30,
-  "removedStale": [
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/15613071",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/15613071.jpg"
-  ],
+  "removedStale": [],
   "listings": [
     {
       "id": "19533255",
