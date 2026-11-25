@@ -142,6 +142,19 @@
     });
   }
 
+  if (!window.__cdfGuidePopupBoot) {
+    window.__cdfGuidePopupBoot = true;
+    var popupSrc = "/src/assets/js/guide-popup.js";
+    if (document.readyState === "loading") {
+      document.write('<script src="' + popupSrc + '" defer></script>');
+    } else {
+      var popupScript = document.createElement("script");
+      popupScript.src = popupSrc;
+      popupScript.defer = true;
+      document.head.appendChild(popupScript);
+    }
+  }
+
   if (readChoice() === "granted") loadPixel();
 
   if (document.readyState === "loading") {
