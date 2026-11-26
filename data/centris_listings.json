@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T20:59:07.371318+00:00",
+  "generatedAt": "2026-11-26T20:54:53.348813+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -16,7 +16,7 @@
     "agentUrl": "https://www.remax-quebec.com/fr/courtiers-immobiliers/p-o.chiasson",
     "viewAllUrl": "https://www.remax-quebec.com/fr/resultats?BrokerId=24115&Sold=0",
     "fallback": null,
-    "discoveredCount": 16,
+    "discoveredCount": 15,
     "protectedUls": [],
     "syncLimited": false
   },
@@ -35,13 +35,21 @@
     "27084256",
     "27273866",
     "28409515",
-    "28699947",
+    "28699947"
+  ],
+  "removedListings": [
     "9745288"
   ],
-  "removedListings": [],
-  "prunedPages": [],
+  "prunedPages": [
+    "/home/runner/work/CDF/CDF/ca/qc/cleveland/centre/271-ch-de-la-vallee/index.html",
+    "/home/runner/work/CDF/CDF/prop-271-ch-de-la-vallee-cleveland-9745288.html",
+    "proprietes.html:/ca/qc/cleveland/centre/271-ch-de-la-vallee/"
+  ],
   "maxListings": 30,
-  "removedStale": [],
+  "removedStale": [
+    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/9745288",
+    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/9745288.jpg"
+  ],
   "listings": [
     {
       "id": "19533255",
@@ -405,49 +413,6 @@
       "photoCount": 38,
       "ogShareImage": "src/assets/images/proprietes/17095739/og-share.jpg",
       "publicPath": "/ca/qc/magog/centre/236-238-rue-de-l-arena/"
-    },
-    {
-      "id": "9745288",
-      "propertyUrl": "https://www.centris.ca/fr/propriete~a-vendre/9745288",
-      "ogTitle": "Maison &#xE0; vendre &#xE0; Cleveland",
-      "ogImage": "https://mspublic.centris.ca/media.ashx?id=ADDD250DAC2082EDDDDDDDDDDB&t=pi&w=1260&h=1024&sm=c",
-      "price": null,
-      "photos": [
-        "01.jpg",
-        "02.jpg",
-        "03.jpg",
-        "04.jpg",
-        "05.jpg",
-        "06.jpg",
-        "07.jpg",
-        "08.jpg",
-        "09.jpg",
-        "10.jpg",
-        "11.jpg",
-        "12.jpg",
-        "13.jpg",
-        "14.jpg",
-        "15.jpg",
-        "16.jpg",
-        "17.jpg",
-        "18.jpg",
-        "19.jpg",
-        "20.jpg",
-        "21.jpg",
-        "22.jpg",
-        "23.jpg",
-        "24.jpg",
-        "25.jpg",
-        "26.jpg",
-        "27.jpg",
-        "28.jpg",
-        "29.jpg",
-        "30.jpg",
-        "31.jpg"
-      ],
-      "photoCount": 31,
-      "ogShareImage": "src/assets/images/proprietes/9745288/og-share.jpg",
-      "publicPath": "/ca/qc/cleveland/centre/271-ch-de-la-vallee/"
     },
     {
       "id": "27273866",
