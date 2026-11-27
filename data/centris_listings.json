@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T20:54:53.348813+00:00",
+  "generatedAt": "2026-11-27T20:38:27.577072+00:00",
   "scrapeMode": "remax",
   "searchUrl": null,
   "registryPath": "data/properties.json",
@@ -37,19 +37,10 @@
     "28409515",
     "28699947"
   ],
-  "removedListings": [
-    "9745288"
-  ],
-  "prunedPages": [
-    "/home/runner/work/CDF/CDF/ca/qc/cleveland/centre/271-ch-de-la-vallee/index.html",
-    "/home/runner/work/CDF/CDF/prop-271-ch-de-la-vallee-cleveland-9745288.html",
-    "proprietes.html:/ca/qc/cleveland/centre/271-ch-de-la-vallee/"
-  ],
+  "removedListings": [],
+  "prunedPages": [],
   "maxListings": 30,
-  "removedStale": [
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/9745288",
-    "/home/runner/work/CDF/CDF/src/assets/images/proprietes/9745288.jpg"
-  ],
+  "removedStale": [],
   "listings": [
     {
       "id": "19533255",
